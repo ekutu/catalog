@@ -25,8 +25,8 @@ public class BookDataLoader {
     public void loadBookTestData() {
         bookRepository.deleteAll();
 
-        Book book1 = Book.of("1234567891", "Northen Lights", "Lyra Silverstar", new BigDecimal(9.90));
-        Book book2 = Book.of("1234567892", "Nexus Journey", "Iorek Nexusson", new BigDecimal(12.90));
+        Book book1 = Book.of("1234567891", "Northen Lights", "Lyra Silverstar", new BigDecimal(9.90), "Polarsophia");
+        Book book2 = Book.of("1234567892", "Nexus Journey", "Iorek Nexusson", new BigDecimal(12.90), null);
         
         bookRepository.saveAll(List.of(book1, book2));
     }
