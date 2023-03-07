@@ -23,7 +23,7 @@ public class BookJsonTests {
     @Test
     public void testSerialize() throws Exception {
 
-        Book book = new Book("1234567890", "Title", "Author", new BigDecimal(9.90));
+        Book book = Book.of("1234567890", "Title", "Author", new BigDecimal(9.90));
         JsonContent<Book> jsonContent = json.write(book);
 
         assertThat(jsonContent).extractingJsonPathStringValue("@.isbn").isEqualTo(book.isbn());
