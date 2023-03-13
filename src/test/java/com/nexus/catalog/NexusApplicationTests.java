@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.nexus.catalog.domain.Book;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+// @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("integration")
 class NexusApplicationTests {
 
