@@ -22,7 +22,7 @@ import com.nexus.catalog.config.DataConfig;
 
 //@DataJdbcTest
 @Import(DataConfig.class)
-@AutoConfigureTestDatabase(replace=AutoConfigureTestDatabase.Replace.NONE)
+// @AutoConfigureTestDatabase(replace=AutoConfigureTestDatabase.Replace.NONE)
 @ActiveProfiles("integration")
 public class BookRepositoryJdbcTests {
 
