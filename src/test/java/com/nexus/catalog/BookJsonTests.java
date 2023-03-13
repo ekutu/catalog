@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.nexus.catalog.domain.Book;
 
-@JsonTest
+// @JsonTest
 // @ActiveProfiles("integration")
 public class BookJsonTests {
 

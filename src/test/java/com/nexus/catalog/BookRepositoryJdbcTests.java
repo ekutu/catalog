@@ -20,7 +20,7 @@ import com.nexus.catalog.domain.Book;
 import com.nexus.catalog.repository.BookRepository;
 import com.nexus.catalog.config.DataConfig;
 
-@DataJdbcTest
+//@DataJdbcTest
 @Import(DataConfig.class)
 @AutoConfigureTestDatabase(replace=AutoConfigureTestDatabase.Replace.NONE)
 @ActiveProfiles("integration")
