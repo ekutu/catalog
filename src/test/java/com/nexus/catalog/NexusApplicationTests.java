@@ -17,7 +17,7 @@ import com.nexus.catalog.domain.Book;
 @ActiveProfiles("integration")
 class NexusApplicationTests {
 
-    @Autowired
+//    @Autowired
     private WebTestClient webTestClient;
 
 //	@Test
