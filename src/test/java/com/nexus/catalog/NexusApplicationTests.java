@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 import java.math.BigDecimal;
 
@@ -15,8 +16,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import com.nexus.catalog.domain.Book;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ConfigurationPropertiesScan
 @AutoConfigureTestDatabase(replace=AutoConfigureTestDatabase.Replace.NONE)
-// @ActiveProfiles("integration")
+@ActiveProfiles("integration")
 class NexusApplicationTests {
 
     @Autowired
