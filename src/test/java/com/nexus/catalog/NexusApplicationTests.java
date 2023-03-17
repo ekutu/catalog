@@ -16,7 +16,7 @@ import com.nexus.catalog.domain.Book;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureTestDatabase(replace=AutoConfigureTestDatabase.Replace.NONE)
-@ActiveProfiles("integration")
+// @ActiveProfiles("integration")
 class NexusApplicationTests {
 
     @Autowired
