@@ -2,13 +2,13 @@ name: Tests
 on: push
 
 jobs:
-  run-all-tests:
+  build:
     runs-on:  ubuntu-22.04
     permissions:
       contents: read
       security-events:  write
     steps:
-      - name: Checkout
+      - name: Checkout Source
         uses: actions/checkout@v3
 
       - name: Setup Java
@@ -20,5 +20,5 @@ jobs:
       - name: Unit and Integration Tests
         run:  |
           chmod +x mvnw
-          ./mvnw clean install
+          ./mvnw clean package 
 
