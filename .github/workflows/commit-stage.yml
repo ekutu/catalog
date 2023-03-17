@@ -1,6 +1,11 @@
 name: Tests 
 on: push
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ekutu/catalog
+  VERSION:  latest
+
 jobs:
   build:
     runs-on:  ubuntu-22.04
@@ -21,4 +26,40 @@ jobs:
         run:  |
           chmod +x mvnw
           ./mvnw clean package 
+
+
+  package:
+    name: Package and Publish
+    if: ${{ github.ref == 'refs/heads/master' }}
+    needs:  [ build ]
+    runs-on:  ubuntu-22.04
+    permissions:
+      contents: read
+      security-events:  write
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+          cache:  maven
+
+      - name:  Build Container Image
+        run:  |
+          chmod +x mvnw
+          ./mvnw spring-boot:build-image image ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+
+      - name: Log Into Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish Container Image
+        run:  docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+
 
