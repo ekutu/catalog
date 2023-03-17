@@ -17,11 +17,8 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Setup Maven
-        uses: stCarolas/setup-maven@4.4
-        with:
-          maven-version:  3.8.2
-
       - name: Unit and Integration Tests
-        run:  mvn clean install
+        run:  |
+          chmod +x mvnw
+          ./mvnw clean install
 
