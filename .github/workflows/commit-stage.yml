@@ -16,7 +16,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-          caches: maven
+          cache: maven
       - name: Unit and Integration Tests
         run:  |
           chmod +x mvnw
