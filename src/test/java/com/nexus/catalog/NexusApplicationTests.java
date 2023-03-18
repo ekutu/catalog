@@ -26,7 +26,7 @@ class NexusApplicationTests {
 
 	@Test
 	void contextLoads() {
-        Book expectedBook = Book.of("2231231231", "Main Titles", "Author", new BigDecimal(12.90), "Polarsophia");
+        Book expectedBook = Book.of("2231231231", "Main Titles", "Mafulacha Author", new BigDecimal(12.90), "Polarsophia");
 
         webTestClient.post()
                      .uri("/books")
