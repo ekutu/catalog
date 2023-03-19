@@ -56,7 +56,7 @@ jobs:
         run:  echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
 
       - name: Publish Container Image
-        run:  run: |
+        run: |
           IMAGE_ID=${{ env.registry }}/${{ github.repository_owner }}/$IMAGE_NAME
 
           # Change all uppercase to lowercase
