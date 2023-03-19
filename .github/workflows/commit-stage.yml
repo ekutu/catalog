@@ -59,5 +59,4 @@ jobs:
         run: |
           IMAGE_ID=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
           echo IMAGE_ID=$IMAGE_ID
-          echo GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           docker image push $IMAGE_ID  
