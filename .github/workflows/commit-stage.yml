@@ -3,8 +3,8 @@ on: push
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ekutu/catalog
-  VERSION:  0.0.1
+  IMAGE_NAME: ekutu/catalog-service
+  VERSION:  latest
 
 jobs:
   build:
