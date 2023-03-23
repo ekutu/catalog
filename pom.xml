@@ -21,7 +21,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <test.profiles.active>testdata</test.profiles.active>
+                <spring.profiles.active>testdata</spring.profiles.active>
             </properties>
         </profile>
     </profiles>
